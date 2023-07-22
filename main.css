@@ -1032,11 +1032,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: top;
-  position: sticky;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch
+  position: relative;
+  
   border-radius: 12px;
   background: #ffffff00;
 background-image: url(Untitled\ design.png);
@@ -2175,8 +2172,14 @@ fieldset {
 
 
 
+  .blinq-card .card-header {
+    border: radius 5000px;
+  }
 
-
+  .blinq-card .card-header .banner-image {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
 
   .blinq-card .save-btn-container {
     border-radius: 0;
@@ -2208,17 +2211,24 @@ fieldset {
   margin-bottom: 0%;
 }
 
+.card-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 0px;
 
+}
 
 .card-header .circle-container {
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
-  max-height: 1rem;
+  max-height: 7rem;
 }
 
 .card-header[data-image-type="logo"],
 .card-header[data-image-type="cover"] {
-  padding-top: 30%;
+  padding-top: 56%;
 }
 
 .card-header[data-image-type="profile"] {
@@ -2320,6 +2330,7 @@ fieldset {
 
 .banner-image-container {
   width: 100%;
+  position: sticky;
 }
 
 .left-picture {
@@ -2328,9 +2339,9 @@ fieldset {
   transform-origin: center;
   will-change: transform;
   justify-content: center;
-  position: absolutez;
+  position: ;
 
-  z-index: 2;
+  z-index: 1;
   left: 5%;
   transform: translateX(25px) translateY(-225px);
   position:relative;
@@ -2806,47 +2817,33 @@ justify-content: center;
 
 }
 
-
 .logoo{
-  margin-top: 1.25rem;
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  color: #ffffff;
+    min-height: 54px;
+    display: flex;
+    position: sticky;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+    gap: 1rem;
+    top: 0;
+    z-index: 2;
+
+    box-sizing: border-box;
+    padding: 0.25rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.933), rgba(0, 0, 0, 0) 40%);
+    padding: 1.5rem 2rem calc(1.75rem + var(--bottom-safety-height, 0rem));
+    transform: translateY(0px) translateX(0px);
+}
+.sticky {
+  position: -webkit-sticky;
   position: sticky;
-  text-decoration: none;
-
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.933), rgb(230, 60, 60)100%);
-  padding: 1.5rem 2rem calc(1.75rem + var(--bottom-safety-height, 0rem));
-  z-index: 1;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  animation-name: example;
-  animation-duration: 25s;
-  transform: translateY(-150px);
+  overflow: hidden;
+  padding: 5px; 
+  align-items: start;
 
-  animation-fill-mode: forwards;
- }
- .save-btn {
-  max-width: 220px;
-  width: 100%;
-  position: relative;
-  height: 3.5rem;
-  padding: .75rem 2.5rem;
-  border-radius: 1000px;
-  white-space: nowrap;
-  font-weight: 700;
-  font-size: 1.375rem;
-  letter-spacing: .3px;
-  background: rgb(var(--card-color));
-  color:#ffffff;
-
-  border: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center
-
- }
+}
 
