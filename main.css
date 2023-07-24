@@ -2847,7 +2847,7 @@ justify-content: center;
   to {top: 75px;}
   }
   .logoo1{
-    color: #e10000;
+    color: #ffffff;
       display: flex;
       position: sticky;
       align-items: end;
@@ -2860,7 +2860,7 @@ justify-content: center;
       z-index: 3;
       justify-content: end;
       box-sizing: border-box;
-      text-decoration: none;
+      text-decoration: ;
       font-size: 1.5rem;
       
       transform: translateY(-15px) translateX(0px);
@@ -2886,9 +2886,9 @@ justify-content: center;
       transition: background 0.2s;
       flex: 0 0 auto;
       color: #ffffff;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       position: relative;
-    
+    font-weight: 2;
      }
    
  
