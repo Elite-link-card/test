@@ -1033,7 +1033,6 @@ html {
   flex-direction: column;
   justify-content: top;
   position: relative;
-  
   border-radius: 12px;
   background: #ffffff00;
 background-image: url(Untitled\ design.png);
@@ -2330,7 +2329,6 @@ fieldset {
 
 .banner-image-container {
   width: 100%;
-  position: sticky;
 }
 
 .left-picture {
@@ -2339,7 +2337,7 @@ fieldset {
   transform-origin: center;
   will-change: transform;
   justify-content: center;
-  position: ;
+  position: absolutez;
 
   z-index: 1;
   left: 5%;
@@ -2646,6 +2644,10 @@ to {top: 0px;}
     #285aeb 90%
   );
 }
+#download10-icon {
+  background: linear-gradient(to bottom, rgba(244, 0, 0, 0.04), rgb(0, 0, 0)100%);
+
+}
 #email-icon{
   background-color: #0084ff;
 }
@@ -2827,23 +2829,60 @@ justify-content: center;
     width: 100%;
     gap: 1rem;
     top: 0;
-    z-index: 2;
+    bottom: 0;
+    z-index: 3;
 
     box-sizing: border-box;
-    padding: 8rem 5rem;
     text-decoration: none;
     font-size: 1.5rem;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.933), rgba(0, 0, 0, 0) 100%);
     padding: 1.5rem 2rem calc(1.75rem + var(--bottom-safety-height, 0rem));
     transform: translateY(0px) translateX(0px);
-}
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  overflow: hidden;
-  padding: 0px; 
-  align-items: start;
+    animation-name:example;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+   }
+  @keyframes PHOTO {
+  from {top: 200px;}
+  to {top: 75px;}
+  }
+  .logoo1{
+    color: #ffffff;
+      display: flex;
+      position: sticky;
+      align-items: end;
+      overflow: hidden;
+      margin: 0;
+      width: 100%;
+      max-height: 100%;
+      gap: 1rem;
+      bottom: 0;
+      z-index: 3;
+      justify-content: end;
+      padding: 0.25rem 1rem;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-size: 1.5rem;
+      
+      transform: translateY(-80px) translateX(0px);
 
-}
+     }
 
+
+     .detail-list .doweload10 {
+      height: 60px;
+      width: 60px;
+      border-radius: 60%;
+      background: var(--danger-800);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.2s;
+      flex: 0 0 auto;
+      color: #ffffff;
+      font-size: 1.75rem;
+      position: relative;
+    
+     }
+   
+ 
