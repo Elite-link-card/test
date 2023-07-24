@@ -1035,7 +1035,7 @@ html {
   position: relative;
   border-radius: 12px;
   background: #ffffff00;
-background-image: url(Untitled\ design.png);
+background-image: url(Untitled\ design\ \(2\).png);
 }
 @keyframes  url(Untitled\ design\ \(1\).png){
   max-width: 100%;
@@ -2562,7 +2562,7 @@ to {top: -20px;}
   display: flex;
   align-items: center;
   align-content: center;
-
+position: sticky;
   transition: background 0.2s;
   margin: 0;
   max-width: 90%;
@@ -2808,12 +2808,12 @@ to {top: 0px;} }
 
 .links-and-notes
 {
-
+display: block;
   background-color: #a3a1a150;
   border-radius: 15%;
 max-width: 95%;
 margin: 15px;
-
+max-height: 10px;
 justify-content: center;
 
 
@@ -2847,27 +2847,33 @@ justify-content: center;
   to {top: 75px;}
   }
   .logoo1{
-    color: #ffffff;
+    color: #e10000;
       display: flex;
       position: sticky;
       align-items: end;
-      overflow: hidden;
+      
       margin: 0;
-      width: 100%;
-      max-height: 100%;
-      gap: 1rem;
-      bottom: 0;
+      width: 100;
+      max-height: px;
+      gap: 8rem;
+      bottom: 0;: 0;
       z-index: 3;
       justify-content: end;
-      padding: 0.25rem 1rem;
       box-sizing: border-box;
       text-decoration: none;
       font-size: 1.5rem;
       
-      transform: translateY(-80px) translateX(0px);
+      transform: translateY(-15px) translateX(0px);
+      padding: 0rem 1.25rem;
 
+      animation-name:example;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
      }
-
+    @keyframes PHOTO {
+    from {top: 200px;}
+    to {top: 0px;}
+    }
 
      .detail-list .doweload10 {
       height: 60px;
