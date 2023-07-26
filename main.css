@@ -2902,6 +2902,9 @@ justify-content: center;
   align-self: center;
   align-items: center;
   justify-content: center;
+  justify-self: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .share-contact-container {
