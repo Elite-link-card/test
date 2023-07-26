@@ -102,11 +102,7 @@
       <div class="links-and-notes">
         <ul class="detail-list">
           <li>
-            <a
-              class="detail-item"
-              href="samy_khaled.vcf"
-              onclick='Blinq.handleFieldClick(&apos;phone_number&apos;, {"id":"TQLKeaVTAQbDKv8RNx9u","label":"Phone","value":"01069239449","isPreset":false,"extension":""})'
-            >
+            <a class="detail-item" href="samy_khaled.vcf">
               <div class="detail-icon-circle" id="phone-icon">
                 <i class="fa fa-phone fa-lg detail-icon"></i>
               </div>
@@ -124,7 +120,6 @@
               href="https://api.whatsapp.com/send?phone&#x3D;2001069239449"
               rel="noreferrer"
               target="_blank"
-              onclick='Blinq.handleFieldClick(&apos;url&apos;, {"id":"3Vgs21NW5GkcoEfhaELY","title":"WhatsApp","value":"https://api.whatsapp.com/send?phone&#x3D;2001069239449","type":"whatsapp","isPreset":false})'
             >
               <div class="detail-icon-circle" id="whatsapp-icon">
                 <i class="fa fa-lg fa-whatsapp detail-icon"></i>
@@ -140,7 +135,6 @@
               href="https://www.instagram.com/samy_khaled_1/?igshid&#x3D;YmMyMTA2M2Y%3D"
               rel="noreferrer"
               target="_blank"
-              onclick='Blinq.handleFieldClick(&apos;url&apos;, {"id":"KNKdj2AnQQrCg0xw6GOZ","title":"Instagram : Samy_khaled_1","value":"https://www.instagram.com/samy_khaled_1/?igshid&#x3D;YmMyMTA2M2Y%3D","type":"instagram","isPreset":false})'
             >
               <div class="detail-icon-circle" id="instagram-icon">
                 <i class="fa fa-instagram fa-lg detail-icon"></i>
@@ -156,7 +150,6 @@
               href="https://www.facebook.com/profile.php?id&#x3D;100013028137023&amp;mibextid&#x3D;ZbWKwL"
               rel="noreferrer"
               target="_blank"
-              onclick='Blinq.handleFieldClick(&apos;url&apos;, {"id":"lgOMvedZTMQjKD7gAbOk","title":"Facebook","value":"https://www.facebook.com/profile.php?id&#x3D;100013028137023&amp;mibextid&#x3D;ZbWKwL","type":"facebook","isPreset":false})'
             >
               <div class="detail-icon-circle" id="facebook-icon">
                 <i class="fa fa-facebook fa-lg detail-icon"></i>
@@ -172,7 +165,6 @@
               href="https://instagram.com/samy_ph_2?igshid&#x3D;NDk5N2NlZjQ&#x3D;"
               rel="noreferrer"
               target="_blank"
-              onclick='Blinq.handleFieldClick(&apos;url&apos;, {"id":"GsHX98CzvrHJ5tIA8Pya","title":"Instagram : Samy_ph_2","value":"https://instagram.com/samy_ph_2?igshid&#x3D;NDk5N2NlZjQ&#x3D;","type":"instagram","isPreset":false})'
             >
               <div class="detail-icon-circle" id="instagram-icon">
                 <i class="fa fa-instagram fa-lg detail-icon"></i>
@@ -184,6 +176,99 @@
           </li>
         </ul>
       </div>
+      <button id="share-contact-button" onclick="showForm()">
+        Share Contact
+      </button>
+      <div class="share-contact-container inactive">
+        <form class="share-contact-form">
+          <div id="form-close-icon" onclick="removeForm()">&times;</div>
+          <h2>Share Contact</h2>
+          <input
+            type="text"
+            required
+            placeholder="First Name"
+            id="first-name-contact"
+          />
+          <input
+            type="text"
+            required
+            placeholder="Last Name"
+            id="last-name-contact"
+          />
+          <input type="text" placeholder="Job Title" id="job-title-contact" />
+          <input type="email" placeholder="Email" id="email-contact" />
+          <input
+            type="tel"
+            required
+            placeholder="Phone Number (+20 1** *** ****)"
+            id="phone-contact"
+          />
+          <button id="share-button" onclick="shareContact()">
+            Share Contact
+          </button>
+        </form>
+
+        <div
+          id="share-contact-form-overlay"
+          class="inactive"
+          onclick="removeForm()"
+        ></div>
+      </div>
     </div>
+    <script>
+      const shareContact = () => {
+        // get the values that will be sent
+        firstName = document.getElementById("first-name-contact").value.trim();
+        lastName = document.getElementById("last-name-contact").value.trim();
+        fullName = firstName + " " + lastName;
+        fullName = fullName.trim();
+        senderPhoneNumber = document
+          .getElementById("phone-contact")
+          .value.trim();
+        email = document.getElementById("email-contact").value.trim();
+        jobTitle = document.getElementById("job-title-contact").value.trim();
+
+        // Encode the phone number and message for the URL.
+        recieverPhoneNumber = "+201091720988";
+
+        message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
+
+        if (email.trim()) {
+          message += ` %0A*Email:* ${email}`;
+        }
+        if (jobTitle.trim()) {
+          message += ` %0A*Job Title:* ${jobTitle}`;
+        }
+
+        const encodedPhoneNumber = encodeURIComponent(recieverPhoneNumber);
+        const encodedMessage = encodeURIComponent(message);
+
+        // Create the WhatsApp URL.
+        const whatsappURL = `https://wa.me/${encodedPhoneNumber}?text=${message}`;
+
+        // Open WhatsApp Web or the WhatsApp app with the pre-filled message.
+        if (firstName.trim() && lastName.trim() && senderPhoneNumber.trim()) {
+          window.open(whatsappURL);
+        }
+      };
+
+      const showForm = () => {
+        document
+          .getElementsByClassName("share-contact-container")[0]
+          .classList.remove("inactive");
+        document
+          .getElementById("share-contact-form-overlay")
+          .classList.remove("inactive");
+      };
+
+      const removeForm = () => {
+        document
+          .getElementsByClassName("share-contact-container")[0]
+          .classList.add("inactive");
+        document
+          .getElementById("share-contact-form-overlay")
+          .classList.add("inactive");
+      };
+    </script>
   </body>
 </html>
